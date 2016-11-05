@@ -1,0 +1,10 @@
+This is simple example using cordova manager Contact Plugin with insert, update, delete and list contact 
+include solution to save contact photo geting information on Camera using Camera Plugin.
+
+
+Get Geolocation using Geolocation Plugin;
+
+Splashscreen functionality when open project
+
+Manager local with insert, update and get information on Storage
+
