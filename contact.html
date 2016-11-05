@@ -1,0 +1,78 @@
+
+
+<!DOCTYPE html>
+
+
+
+
+<html>
+<head>
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Cross Plataform Mobile - Cordova</title>
+</head>
+
+<body >
+
+<div data-role="main" style="padding:0px;" width="500" class="ui-content">
+    <div data-role="navbar" data-iconpos="bottom" width="500" class="ui-grid-a">
+        <ul width="500">
+            <li><a href="" id="btnHome" data-role="button" data-transition="fade"  class="icon-camera-retro  ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-home ui-btn-b">Home</a></li>
+            <li><a href="" id="btnRegister" data-role="button" data-transition="fade"  class="icon-camera-retro  ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-lock ui-btn-b">Register</a></li>
+            <li><a href="" data-role="button" id="btnList" data-transition="fade"  class="icon-camera-retro  ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-grid ui-btn-b ui-btn-active">List</a></li>
+            <li><a href="#addContact" id="btnAddContact" data-rel="popup" data-position-to="window" data-role="button" data-transition="fade"  class="icon-camera-retro  ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-plus ui-btn-b">Add</a></li>
+        </ul>
+    </div><!-- /navbar -->
+</div><!-- /footer -->
+
+
+<ul data-role="listview" id="listContact" name="listContact" class="listContact" data-split-icon="gear" data-filter="true" data-split-theme="a" data-inset="true">
+
+
+</ul>
+<div data-role="popup" id="deleteContact" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+    <p>Do you want delete <label id="lblDeleteContact"></label> contact?</p>
+    <label id="lblID" visible="false"></label>
+    <a href="#" id="btnDeleteContact" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-delete ui-mini">Delete</a>
+    <a href="#"  id="btnCancelDel"       data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-back   ui-btn-icon-left ui-btn-back ui-mini">Cancel</a>
+</div>
+
+<div data-role="popup" id="addContact" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:480px; padding-bottom:2em;">
+    <li class="ui-li-has-alt ui-li-has-thumb"><a href="#" >
+        <img id="imgAddContact" width="225" align="middle" height="225" src="img/contact.jpeg" alt="img/contact.jpeg">
+        <br>
+        Name:
+        <input type="text" maxlength="30" id="contactName" name="contactName" value="">
+        <br>
+        Number:
+        <input type="tel" maxlength="10" minlength="10" id="contactNumber" name="contactNumber" value="">
+    </li>
+    <a href="#" id="addContactButton" name="addContactButton" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn ui-icon-plus ui-btn-icon-left ui-btn-plus ui-mini">Add Contact</a>
+    <a href="#" id="addBackButton" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn ui-icon-back ui-btn-icon-left ui-btn-back ui-mini">Cancel</a>
+</div>
+
+
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.js"></script>
+
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/contact.js"></script>
+
+
+</body>
+</html>
